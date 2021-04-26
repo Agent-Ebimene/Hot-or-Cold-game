@@ -1,0 +1,19 @@
+
+.app{
+    width:40vw;
+    height:100vh;
+    margin:0 auto;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:30px;
+}
+#game__button{
+    background:purple;
+    border:2px solid purple;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:40px
+
+}
