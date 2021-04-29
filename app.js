@@ -42,24 +42,31 @@ const checkGuess = () => {
     // a value to compare with the guess temp
     neutralTemp = parseInt(Math.random() * 50 + 1);
     const inputValue = inputElement.value;
-     const guess = +inputValue;
-     if (inputValue.trim() === '' || isNaN(inputValue)) {
-         result.innerText = 'Please enter a valid number';
-         return;
-    }
+    const guess = +inputValue;
+    if (guess <= 100 && guess >= 0) {
+        
     
-    console.log(`Guess=${guess}`);
-    guessTemp = maxTemp - Math.abs(randomNumber - guess);
-    console.log(`Temp= ${guessTemp}`);
-    if (guessTemp === maxTemp) {
-        result.innerText = 'You guessed right!';
-    } else if(guessTemp > neutralTemp){
-        result.innerText = 'Getting hotter!';
-    } else if (guessTemp < neutralTemp) {
-        result.innerText = 'Getting Colder!';
+        if (inputValue.trim() === '' || isNaN(inputValue)) {
+            result.innerText = 'Please enter a valid number';
+            return;
+        }
+    
+        console.log(`Guess=${guess}`);
+        guessTemp = maxTemp - Math.abs(randomNumber - guess);
+        console.log(`Temp= ${guessTemp}`);
+        if (guessTemp === maxTemp) {
+            result.innerText = 'You guessed right!';
+        } else if (guessTemp > neutralTemp) {
+            result.innerText = 'Getting hotter!';
+        } else if (guessTemp < neutralTemp) {
+            result.innerText = 'Getting Colder!';
+        } else {
+            result.innerText = 'Neither cold nor hot!';
+        }
+        return;
     } else {
-        result.innerText = 'Neither cold nor hot!';
-    } 
+        result.innerText = 'Invalid selection!';
+    }
 }
 
 gameBtn.addEventListener('click',checkGuess);
