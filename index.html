@@ -8,9 +8,29 @@
     <title>Hot or Cold Game</title>
 </head>
 <body>
+    <header class="game-header">
+        <h2>Hot or Cold</h2>
+        <p>Guess the secret number by entering an integer between 0 and 100</p>
+    </header>
     <div class="app">
-        <button id="game__button">Click here to guess</button>
+        <div class="game-container">
 
+            <div class="game">
+                <h3> Your Guess</h3>
+                
+                <input type="text" id="input-element">
+                <div class="game-btn">
+                    <button id="submit">Submit</button>
+                    <button id="restart">Restart</button>
+
+                </div>
+
+            </div>
+            <div class="result">
+                <h4>Waiting for your guess!</h4>
+            </div>
+        </div>
+        
     </div>
 
 </body>
